@@ -32,7 +32,8 @@ listresult << current unless current.empty?
 
 # Affichage
 listresult.each do |group|
-  result << group.map { |k, v| "#{k}: #{v}" }.join("\n")
+  #result << group.map { |k, v| "#{k}: #{v}" }.join("\n")
+  result << group.map { |k, v| "#{v}" }.join("\n")
 end
 
 
