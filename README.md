@@ -28,6 +28,7 @@ sh yeah.sh wonderful 0
 sh ./partition.sh autumn-leaves-violin.ly 2
 ```
 * si les notes c'est deja ecrit, il faut jouer la meme melodie  en jouant 0 semi tones higher or lower,  mais le rythmne il faut repeter la mesure 12 fois , tu as donne seulement 2 mesures, de rythme (ecris 2)  pour jouer tout le texte des notes, il faut jouer 24 mesures de notes
+- dans bow_2, tu peux faire des mesures diffrente 4/4 3/4
 ```bash
 sh ./texterythme.sh bow 0 2 
 ```
