@@ -16,7 +16,7 @@ AutoEndMovementBarline = \bar "|."
 % The music follows
 
 MvmntIVoiceI = {
-e'4\staccato e'\staccato g'\staccato g'\staccato a'\staccato a'\staccato f'\staccato f'\staccato e'4\staccato e'\staccato g'\staccato g'\staccato f'\staccato f'\staccato d'\staccato d'\staccato e'4\staccato e'\staccato g'\staccato g'\staccato c''\staccato c''\staccato a'\staccato a'\staccato b'4\staccato b'\staccato d''\staccato d''\staccato b'\staccato b'\staccato g''\staccato g''\staccato b''4\staccato b''\staccato fis''\staccato fis''\staccato g''\staccato g''\staccato e''\staccato e''\staccato a''4\staccato a''\staccato e''\staccato e''\staccato fis''\staccato fis''\staccato d''\staccato d''\staccato b'4\staccato b'\staccato g''\staccato g''\staccato e''\staccato e''\staccato c''\staccato c''\staccato b'4\staccato b'\staccato a'\staccato a'\staccato g'\staccato g'\staccato g\staccato g\staccato c'4\staccato c'\staccato e'\staccato e'\staccato f'\staccato f'\staccato a\staccato a\staccato c'4\staccato c'\staccato cis'\staccato cis'\staccato d'\staccato d'\staccato g\staccato g\staccato c'4\staccato c'\staccato bes\staccato bes\staccato a\staccato a\staccato aes\staccato aes\staccato g4\staccato g\staccato b\staccato b\staccato c'\staccato c'\staccato c'\staccato c'\staccato
+e'4\staccato e'\staccato g'\staccato a'\staccato a'\staccato f'\staccato e'4\staccato e'\staccato g'\staccato f'\staccato f'\staccato d'\staccato e'4\staccato e'\staccato g'\staccato c''\staccato c''\staccato a'\staccato b'4\staccato b'\staccato d''\staccato b'\staccato b'\staccato g''\staccato b''4\staccato b''\staccato fis''\staccato g''\staccato g''\staccato e''\staccato a''4\staccato a''\staccato e''\staccato fis''\staccato fis''\staccato d''\staccato b'4\staccato b'\staccato g''\staccato e''\staccato e''\staccato c''\staccato b'4\staccato b'\staccato a'\staccato g'\staccato g'\staccato g\staccato c'4\staccato c'\staccato e'\staccato f'\staccato f'\staccato a\staccato c'4\staccato c'\staccato cis'\staccato d'\staccato d'\staccato g\staccato c'4\staccato c'\staccato bes\staccato a\staccato a\staccato aes\staccato g4\staccato g\staccato b\staccato c'1
 }
 %Default Score Layout
 
@@ -40,7 +40,7 @@ tagline = \markup {"" on \simple #(strftime "%x" (localtime (current-time)))}
 %Start of Staff
 \new Staff = "Part 1"  << 
  \new Voice = "MvmntIVoiceI"  { 
-  \clef treble    \key c \major    \time 4/4   \MvmntIVoiceI
+  \clef treble    \key c \major    \time 3/4   \MvmntIVoiceI
                         } %End of voice
 
                         >> %End of Staff

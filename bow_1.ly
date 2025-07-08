@@ -43,7 +43,7 @@ MvmntIVoiceI = {
          c'?2 bes\AutoBarline
          a aes\AutoBarline
          g b?2\AutoBarline
-         c' c' \AutoEndMovementBarline
+         c'1  \AutoEndMovementBarline
 }
 
 

@@ -16,9 +16,17 @@ if section_match
         .gsub(/\\AutoBarline|\\AutoEndMovementBarline/, "")
         .strip
   end.reject { |line| line.empty? }
+  x1=cleaned_lines.join(" ").split(" ").length / number
 
   # Fusionner les lignes et remplacer a-f par "a"
   cleaned_result = (" "+cleaned_lines.join(" ")) * (24/number)
+  cleaned_result = cleaned_result.split(" ")
+  cleaned_result.pop(x1)
+  cleaned_result.append("c'1")
+  cleaned_result = cleaned_result.join(" ")
+
+
+
 
   # Construire la section modifiée
   new_section = "#{opening} #{cleaned_result} }"
