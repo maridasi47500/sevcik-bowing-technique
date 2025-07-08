@@ -64,14 +64,20 @@ end
 interval = ARGV[0].to_i
 notes_array = notes.split
 x = 0
+p "nomnbre notes:"
+p nombrenotes
+x1=nombrenotes.map{|h|h.to_i}.sum / ARGV[1].to_i
+x2=x1*24
+x3=x2/nombrenotes.length
+nombrenotes=nombrenotes*x3
+p "notes_array:"
+p notes_array
 notes_array = notes_array.flat_map.with_index(0) do |char, i|
-  [char] * nombrenotes[x].to_i
-  if x == numbrenotes.length
-    x == 0
-  else 
-    x += 1
-  end
+  y=[char] * nombrenotes[x].to_i
+  x += 1
+  y
 end
+
 
 if interval != 0
   all_transposed_notes = transpose_notes(notes_array, interval)

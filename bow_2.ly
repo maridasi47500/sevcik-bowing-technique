@@ -16,8 +16,8 @@ AutoEndMovementBarline = \bar "|."
 % The music follows
 
 MvmntIVoiceI = {
-         c'4\staccato c'\staccato c'\staccato c'\staccato\AutoBarline
-         c'\staccato c'\staccato c'\staccato c'\staccato \AutoEndMovementBarline
+         a'4\staccato a'\staccato b'\staccato b'\staccato\AutoBarline
+         c'\staccato c'\staccato d'\staccato d'\staccato \AutoEndMovementBarline
 }
 
 
