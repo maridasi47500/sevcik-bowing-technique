@@ -27,11 +27,20 @@ sh yeah.sh wonderful 0
 ```bash
 sh ./partition.sh autumn-leaves-violin.ly 2
 ```
+### sevcik
+-  il y a un texte , et sevcik fait des coups d'archet
 * si les notes c'est deja ecrit, il faut jouer la meme melodie  en jouant 0 semi tones higher or lower,  mais le rythmne il faut repeter la mesure 12 fois , tu as donne seulement 2 mesures, de rythme (ecris 2)  pour jouer tout le texte des notes, il faut jouer 24 mesures de notes
 - dans bow_2, tu peux faire des mesures diffrente 4/4 3/4
+- dans bow2 , tu fais quelque chose avec le nombre de notes differentes dans chaque mesure, si dans la mesure, mi re do si, pour faire marcher ce programme, un rythme, avec coups d'archet seulement avec mi re do si pour 1 mesure, sur 2 mesures, avec les notes de 2 mesures
+- 1er argument nom du script _1 et _2, ex bow, bow_1, bow_2
+-  semi tones higher lower
+- nombre de mesures coup d'archet
+- nombre de mesures dans le texte
+
 ```bash
-sh ./texterythme.sh bow 0 2 
+sh ./texterythme.sh bow 0 2 24
 ```
+- dans wowrythme.rb, et wownoterythme.rb, il faut ajouter, staccato, upbow, downbow
 
 
 

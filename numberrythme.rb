@@ -1,6 +1,7 @@
 # Lire le contenu original
 filename = ARGV[0] + "_2.ly"
 number = ARGV[1].to_i
+nbmesuretext = ARGV[2].to_i
 input = File.read(filename)
 
 # Trouver et capturer le contenu de la section MvmntIVoiceI
@@ -15,11 +16,18 @@ if section_match
     line.gsub("?", "")
         .gsub(/\\AutoBarline|\\AutoEndMovementBarline/, "")
         .strip
+    #line.gsub("?","").gsub(/\\AutoBarline|\\AutoEndMovementBarline|%?\d{1,2}|%?(\d|\d\.|[1-9][0-9]\.)/, "").strip
+
   end.reject { |line| line.empty? }
-  x1=cleaned_lines.join(" ").split(" ").length / number
+  mylength=cleaned_lines.join(" ").split(" ").length
+  p "nombre notes: #{mylength}"
+  x1=mylength / number
+  mylines=(x1 * nbmesuretext) / number
+  x2=nbmesuretext/number
+  p "x #{number} mesures = #{mylength} notes x #{x2} = #{nbmesuretext} mesure"
 
   # Fusionner les lignes et remplacer a-f par "a"
-  cleaned_result = (" "+cleaned_lines.join(" ")) * (24/number)
+  cleaned_result = (" "+cleaned_lines.join(" ")) * x2
   cleaned_result = cleaned_result.split(" ")
   cleaned_result.pop(x1)
   cleaned_result.append("c'1")

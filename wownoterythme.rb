@@ -10,7 +10,7 @@ output = section.lines.map do |line|
   # Remove specific elements and numbers with points
   #line.gsub("?","").gsub().strip /\\AutoBarline|\\AutoEndMovementBarline|%?\d{1,2}|%?(\d|\d\.|[1-9][0-9]\.)/
 
-  line.gsub("?","").gsub(/\\staccato|\\AutoBarline|\\AutoEndMovementBarline|%?\d{1,2}|%?(\d|\d\.|[1-9][0-9]\.)/, "").strip
+  line.gsub("?","").gsub(/\\upbow|\\downbow|\\staccato|\\AutoBarline|\\AutoEndMovementBarline|%?\d{1,2}|%?(\d|\d\.|[1-9][0-9]\.)/, "").strip
 
 end.join(" ").split(" ").reject { |line| line.empty? } # Remove empty lines
 

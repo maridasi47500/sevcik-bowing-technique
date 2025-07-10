@@ -66,14 +66,19 @@ notes_array = notes.split
 x = 0
 p "nomnbre notes:"
 p nombrenotes
+nbmesure=ARGV[1].to_i
+nbmesuretext=ARGV[2].to_i
 x1=nombrenotes.map{|h|h.to_i}.sum / ARGV[1].to_i
-x2=x1*24
+x2=x1*nbmesuretext
 x3=x2/nombrenotes.length
-nombrenotes=nombrenotes*x3
+#monnombre=nombrenotes*(nbmesuretext/nbmesure)
+monnombre=nombrenotes*x3
 p "notes_array:"
 p notes_array
+p "notes_array_length:"
+p notes_array.length
 notes_array = notes_array.flat_map.with_index(0) do |char, i|
-  y=[char] * nombrenotes[x].to_i
+  y=[char] * monnombre[x].to_i
   x += 1
   y
 end

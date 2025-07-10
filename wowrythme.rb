@@ -20,16 +20,16 @@ new_content = new_content.gsub(pattern) do |match|
   inner_content = $1
   updated_inner_content = inner_content
   patterns = [
-    /\b(?<!AutoBarline|staccato|tuplet|partial|AutoEndMovementBarline)([a-g](es|is)\\'{4})\b/,
-    /\b(?<!AutoBarline|staccato|tuplet|partial|AutoEndMovementBarline)([a-g](es|is)\\'{3})\b/,
-    /\b(?<!AutoBarline|staccato|tuplet|partial|AutoEndMovementBarline)([a-g](es|is)\\'{2})\b/,
-    /\b(?<!AutoBarline|staccato|tuplet|partial|AutoEndMovementBarline)([a-g](es|is)\\'{1})\b/,
-    /\b(?<!AutoBarline|staccato|tuplet|partial|AutoEndMovementBarline)([a-g]\\'{4})\b/,
-    /\b(?<!AutoBarline|staccato|tuplet|partial|AutoEndMovementBarline)([a-g]\\'{3})\b/,
-    /\b(?<!AutoBarline|staccato|tuplet|partial|AutoEndMovementBarline)([a-g]\\'{2})\b/,
-    /\b(?<!AutoBarline|staccato|tuplet|partial|AutoEndMovementBarline)([a-g]\\'{1})\b/,
-    /\b(?<!AutoBarline|staccato|tuplet|partial|AutoEndMovementBarline)([a-g](es|is))\b/,
-    /\b(?<!AutoBarline|staccato|tuplet|partial|AutoEndMovementBarline)([a-g])\b/
+    /\b(?<!AutoBarline|upbow|downbow|staccato|tuplet|partial|AutoEndMovementBarline)([a-g](es|is)\\'{4})\b/,
+    /\b(?<!AutoBarline|upbow|downbow|staccato|tuplet|partial|AutoEndMovementBarline)([a-g](es|is)\\'{3})\b/,
+    /\b(?<!AutoBarline|upbow|downbow|staccato|tuplet|partial|AutoEndMovementBarline)([a-g](es|is)\\'{2})\b/,
+    /\b(?<!AutoBarline|upbow|downbow|staccato|tuplet|partial|AutoEndMovementBarline)([a-g](es|is)\\'{1})\b/,
+    /\b(?<!AutoBarline|upbow|downbow|staccato|tuplet|partial|AutoEndMovementBarline)([a-g]\\'{4})\b/,
+    /\b(?<!AutoBarline|upbow|downbow|staccato|tuplet|partial|AutoEndMovementBarline)([a-g]\\'{3})\b/,
+    /\b(?<!AutoBarline|upbow|downbow|staccato|tuplet|partial|AutoEndMovementBarline)([a-g]\\'{2})\b/,
+    /\b(?<!AutoBarline|upbow|downbow|staccato|tuplet|partial|AutoEndMovementBarline)([a-g]\\'{1})\b/,
+    /\b(?<!AutoBarline|upbow|downbow|staccato|tuplet|partial|AutoEndMovementBarline)([a-g](es|is))\b/,
+    /\b(?<!AutoBarline|upbow|downbow|staccato|tuplet|partial|AutoEndMovementBarline)([a-g])\b/
   ]
   patterns.each do |pattern1|
 

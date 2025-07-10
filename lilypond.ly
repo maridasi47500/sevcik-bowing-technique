@@ -22,6 +22,7 @@ MvmntIVoiceI = {
                e'16  e' e' g' 
 }
 %Default Score Layout
+
 \header{DenemoLayoutName = "Default Score Layout"
         instrumentation = \markup { \with-url #'"scheme:(d-BookInstrumentation)" "Partition entière"}
         }
