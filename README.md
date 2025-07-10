@@ -42,6 +42,9 @@ sh ./texterythme.sh bow 0 2 24
 ```
 - dans wowrythme.rb, et wownoterythme.rb, il faut ajouter, staccato, upbow, downbow
 
+```bash
+sh ./texterythme.sh mybow 0 2 24
+```
 
 
 
