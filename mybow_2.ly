@@ -16,8 +16,8 @@ AutoEndMovementBarline = \bar "|."
 % The music follows
 
 MvmntIVoiceI = {
-         e'8.\downbow (g'16 e'8. g'16) \AutoBarline
-         e'8.\upbow  (g'16 e'8. g'16) 
+         e''8.\downbow (d''16 c''8. b'16) \AutoBarline
+         a'8.\upbow  (d''16 f''8. d''16) 
 }
 %Default Score Layout
 \header{DenemoLayoutName = "Default Score Layout"

@@ -53,3 +53,6 @@ sh ./texterythme.sh mybow 0 2 24
 
 # autumn-leaves-lilypond
 # sevcik-bowing-technique
+ ![alt text](violin1.png) 
+ ![alt text](violin3.png) 
+ ![alt text](violin2.png) 
