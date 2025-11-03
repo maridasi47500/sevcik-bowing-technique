@@ -44,12 +44,29 @@ sh ./texterythme.sh bow 0 2 24
 
 ```bash
 sh ./texterythme.sh mybow 0 2 24
+sh ./texterythme.sh yourscore 0  1 31
 ```
  - (0 semi tones higher or lower), il y a 2 mesures (2 mesures du texte dans mybow1, mais en combien de mesures 1 ou plusieurs mesures) pour voir le rythme, il y a 24 mesures dans le texte de notes,
 - le text est dans mybow_1, je modifie seulement mybow_2
 
 
 
+- score like 
+````
+MvmntIVoiceI = \relative { r4 d''8\noBeam g, c4 r }
+words  = \lyricmode { And God said, }
+upper  = \relative { <g' d g,>2~ <g c, g> }
+lower  = \relative { b,2 e }
+
+\score {
+  <<
+    \new Staff = "" <<
+      \new Voice = "MvmntIVoiceI" { \MvmntIVoiceI }
+      \addlyrics { \words }
+    >>
+  >>
+  \layout { }
+````
 
 
 
@@ -60,3 +77,6 @@ sh ./texterythme.sh mybow 0 2 24
  ![alt text](violin2.png) 
  ![alt text](heythere.png) 
  ![alt text](heythere1.png) 
+ ![alt text](photo1.png) 
+ ![alt text](photo2.png) 
+ ![alt text](photo3.png) 

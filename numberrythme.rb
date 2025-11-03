@@ -34,7 +34,7 @@ if section_match
   notes = cleaned_lines.join(" ")
   regex = /(\d{2}\:\d{2}:\d{2}|\d{2}\:\d{2})/ # original
   # or
-  regex = /(?<!AutoBarline|tuplet|partial|AutoEndMovementBarline|downbow|upbow)((aes|ais|bes|bis|ces|cis|des|dis|ees|eis|fes|fis|ges|gis|a|b|c|d|e|f|g)'*)(\d+)?(\.)?(?![a-z])/
+  regex = /(?<!AutoBarline|staccato|tuplet|partial|AutoEndMovementBarline|downbow|upbow)((aes|ais|bes|bis|ces|cis|des|dis|ees|eis|fes|fis|ges|gis|a|b|c|d|e|f|g)'*)(\d+)?(\.)?(?![a-z])/
 
   
   string = '12:01, 12:02, 12:03:04, 12:05'
@@ -66,7 +66,7 @@ if section_match
   notes.scan(regex) do |c|
     res << [c, $~.offset(0)[0]]
     p [c, $~.offset(0)[0]]
-    notestoadd << $~.offset(0)[0]+c[0].length+c[2].length
+    notestoadd << $~.offset(0)[0]+c[0].to_s.length+c[2].to_s.length
   end
   
   res.inspect # => [["a", 0], ["a", 2]]
