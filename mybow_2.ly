@@ -16,8 +16,7 @@ AutoEndMovementBarline = \bar "|."
 % The music follows
 
 MvmntIVoiceI = {
-         e''16\downbow e''16 \upbow e''16 \downbow d''16 \upbow (c''8. b'16) \AutoBarline
-         a'16\downbow  d''8. \upbow (f''8. d''16) 
+         e''8 \downbow e''8 \upbow e''8 \downbow d''4 \upbow d''8 \downbow c''8  \upbow c''8 \downbow c''8 \upbow b'4 \downbow b'8 \upbow \AutoBarline
 }
 %Default Score Layout
 \header{DenemoLayoutName = "Default Score Layout"
@@ -40,7 +39,7 @@ tagline = \markup {"" on \simple #(strftime "%x" (localtime (current-time)))}
 %Start of Staff
 \new Staff = "Part 1"  << 
  \new Voice = "MvmntIVoiceI"  { 
-  \clef treble    \key c \major    \time 2/4   \MvmntIVoiceI
+  \clef treble    \key c \major    \time 6/8   \MvmntIVoiceI
                         } %End of voice
 
                         >> %End of Staff

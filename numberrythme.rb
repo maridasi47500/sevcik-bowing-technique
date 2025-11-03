@@ -75,7 +75,10 @@ if section_match
   p somearr
   p somenote
 
-  cleaned_result << notes[0..(somenote[-1])]
+  cleaned_result << " "
+  if nbmesure > 1
+      cleaned_result << notes[0..(somenote[-1])]
+  end
   cleaned_result = cleaned_result.split(" ")
   cleaned_result.append("c'1")
   cleaned_result = cleaned_result.join(" ")
