@@ -68,20 +68,61 @@ p "nomnbre notes:"
 p nombrenotes
 nbmesure=ARGV[1].to_i
 nbmesuretext=ARGV[2].to_i
-x1=nombrenotes.map{|h|h.to_i}.sum / ARGV[1].to_i
+nbnotesdansmesures=nombrenotes.map{|h|h.to_i}.sum
+nbnotes1mesure=nbnotesdansmesures / nbmesure
+nbnotesdiff1mes= nombrenotes.map{|h|1}.sum / nbmesure
+p "nb notes differente 1 mesure : #{nbnotesdiff1mes}"
+p "nbnotesdansmesure / nbmesures"
+p nbnotesdansmesures, nbmesure
+x1=nbnotesdansmesures / nbmesure
 x2=x1*nbmesuretext
 x3=x2/nombrenotes.length
+p nombrenotes.map{|h|1}.sum
+p nombrenotes.each_slice(nbnotesdiff1mes).to_a
+y1=nombrenotes.each_slice(nbnotesdiff1mes).to_a.map{|h|h.map(&:to_i).sum}
+y2=nombrenotes.each_slice(nbnotesdiff1mes).to_a
+arraymesures=nombrenotes.each_slice(nbnotesdiff1mes).to_a.map{|h|h.map(&:to_i)}
+arraymesures2=nombrenotes.each_slice(nbnotesdiff1mes).to_a.map{|h|h.map(&:to_i).sum}
+
+
+length = nbmesuretext - 1
+
+0.upto(length - arraymesures.length) do |i|
+    arraymesures << arraymesures[i]
+end
+p "array mesure not flatten"
+p arraymesures
+arraymesures=arraymesures.flatten
+arraymesures= arraymesures.flatten.map(&:to_i)
+arraymesures=arraymesures.take(arraymesures.length - nbnotesdiff1mes)
+p (arraymesures)
+p (arraymesures.length)
+
+arraymesures << 1
+p (arraymesures)
+p (arraymesures.length)
+notes_array= notes_array.flatten.take(arraymesures.sum - nbnotesdiff1mes)
+
+p "array mesure"
+p arraymesures
 #monnombre=nombrenotes*(nbmesuretext/nbmesure)
 monnombre=nombrenotes*x3
+p "monnombre"
+p monnombre
 p "notes_array:"
 p notes_array
 p "notes_array_length:"
 p notes_array.length
 notes_array = notes_array.flat_map.with_index(0) do |char, i|
-  y=[char] * monnombre[x].to_i
+  #p arraymesures[x].to_i
+  #p monnombre[x].to_i
+  #y=[char] * monnombre[x].to_i
+  y=[char] * arraymesures[x].to_i
   x += 1
   y
 end
+p "new notes aray"
+p notes_array
 
 
 if interval != 0
@@ -104,7 +145,7 @@ new_content = content.gsub('Manote') do
   #note = all_transposed_notes[notes_counter % notes_array.length]
   note = all_transposed_notes[notes_counter]
   notes_counter += 1
-  p note
+  #p note
   note
 end
 
