@@ -48,7 +48,7 @@ if section_match
   end
   mysum=mynotes.map{|h|(1.to_f/h.to_f).rationalize}
   p mysum
-  mysum1=mysum.sum / 2
+  mysum1=mysum.sum / nbmesure
   def msum(arr,m)
       i=0
       sum=0
