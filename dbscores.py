@@ -189,10 +189,11 @@ def init_db():
         theme TEXT,
         nom TEXT,
         semitones TEXT,
-        mesures INTEGER,
-        mesures_text INTEGER,
+        nb_mesures INTEGER,
+        nb_mesures_text INTEGER,
         times STRING,
-        textmesures INTEGER
+        textmesures INTEGER,
+        nbnotes INTEGER
     )
     """)
 # - (0 semi tones higher or lower), il y a 2 mesures (2 mesures du texte dans mybow1, mais en combien de mesures 1 ou plusieurs mesures) pour voir le rythme, il y a 24 mesures dans le texte de notes,
