@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>Formulaire Séance</title></head>
+<body>
+<h1>{{ 'Modifier' if seance else 'Ajouter' }} une séance</h1>
+<form method="post" action="{{ url_for('save') }}">
+  {% if seance %}<input type="hidden" name="id" value="{{ seance[0] }}">{% endif %}
+  <label>Thème (nom de la partition): <input name="theme" value="{{ seance[1] if seance else '' }}"></label><br>
+  <label>Nom (nom du nouveau texte): <input name="nom" value="{{ seance[2] if seance else '' }}"></label><br>
+  <label>demi ton de la partition: <input name="semitones" value="{{ seance[3] if seance else '' }}"></label><br>
+  <label>nom de mesures dans un petit texte: <input name="mesures" value="{{ seance[4] if seance else '' }}"></label><br>
+  <label>nombre de mesures dans le long text/longue partition: <input name="mesurestext" value="{{ seance[5] if seance else '[]' }}"></label><br>
+  <label>mesure (3/4, 4/4) dans le petit text: <input name="times" value="{{ seance[6] if seance else '' }}"></label><br>
+  <label>nombre de notes dans le petit text: <input name="nbnotes" value="{{ seance[7] if seance else '' }}"></label><br>
+  <button type="submit">💾 Sauvegarder</button>
+</form>
+<a href="/">retour</a>
+
+
+</body>
+</html>
+
