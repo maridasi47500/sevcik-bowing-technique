@@ -93,13 +93,12 @@ def save():
     save_score(
         request.form["theme"],
         request.form["nom"],
-        request.form["semitones"],
-        request.form["mesures"],
+        int(request.form["semitones"]),
+        int(request.form["mesures"]),
         int(request.form["mesurestext"]),
-        int(request.form["duree_phase"]),
-        int(request.form["pas_tours"]),
-        int(request.form["repetitions"]),
-        int(request.form["nbmintours"]),
+        int(request.form["times"]),
+        int(request.form["nbnotes"]),
+        request.form["musictext"],
         score_id=score_id
     )
 

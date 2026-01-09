@@ -59,8 +59,7 @@ clean_and_parse_json(nettoyer_json_embedded(row[6])),
     conn.close()
     return hey
 
-def save_score(theme, nom, musique, lumiere, directions, motivations,
-                nombre_max_tours, duree_phase, pas_tours, repetitions, nbmintours, score_id=None):
+def save_score(theme, nom, semitones, nbmesures, nbmesurestext, times, nbnotes, musictext, score_id=None):
     conn = get_connection()
     cursor = conn.cursor()
     if score_id:

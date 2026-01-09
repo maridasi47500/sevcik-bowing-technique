@@ -12,6 +12,7 @@
   <label>nombre de mesures dans le long text/longue partition: <input name="mesurestext" value="{{ seance[5] if seance else '' }}"></label><br>
   <label>mesure (3/4, 4/4) dans le petit text: <input name="times" value="{{ seance[6] if seance else '' }}"></label><br>
   <label>nombre de notes dans le petit text: <input name="nbnotes" value="{{ seance[7] if seance else '' }}"></label><br>
+  <label>nombre de notes dans le petit text: <textarea name="musictext" value="{{ seance[8] if seance else '' }}"></textarea></label><br>
   <button type="submit">💾 Sauvegarder</button>
 </form>
 <a href="/">retour</a>
