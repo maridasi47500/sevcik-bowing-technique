@@ -16,7 +16,7 @@ AutoEndMovementBarline = \bar "|."
 % The music follows
 
 MvmntIVoiceI = {
-  c''8 c''8 d''16 d''16  c''16\staccato b'\staccato c''\staccato b'\staccato c''\staccato a' \staccato
+  c''4 d'' c'' b' c'' b' c'' a' 
 
 }
 %Default Score Layout
@@ -40,7 +40,7 @@ tagline = \markup {"" on \simple #(strftime "%x" (localtime (current-time)))}
 %Start of Staff
 \new Staff = "Part 1"  << 
  \new Voice = "MvmntIVoiceI"  { 
-  \clef treble    \key c \major    \time 6/8   \MvmntIVoiceI
+  \clef treble    \key c \major    \time 2/4   \MvmntIVoiceI
                         } %End of voice
 
                         >> %End of Staff

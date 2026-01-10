@@ -20,20 +20,24 @@
 </div>
     </form>
 
-    {% if message %}
-        <p><strong>{{ message }}</strong></p>
-    {% endif %}
+
 <h1>📋 Séances enregistrées</h1>
 <a href="{{ url_for('new') }}">➕ Ajouter une séance</a>
 <ul>
-  {% for s in seances %}
+  {% for s in scores %}
     <li>
-      <strong>{{ seances[s]['nom'] }}</strong> — {{ seances[s]['lumiere'] }}
-      <a href="{{ url_for('edit', seance_id=seances[s]['id']) }}">✏️ Modifier</a>
+      <strong>{{ scores[s]['nom'] }}</strong> — {{ scores[s]['mesures'] }} mesures
+      <a href="{{ url_for('edit', score_id=scores[s]['id']) }}">✏️ Modifier</a>
     </li>
   {% endfor %}
 </ul>
 
+    {% if message %}
+        <p><strong>{{ message }}</strong></p>
+
+<iframe style="width:100%;height:200px;" src="http://localhost:8000/scores/current{{ namescore }}/currentscore.html"></iframe>
+<iframe style="width:100%;height:600px;" src="http://localhost:8000/scores/mynewscore{{ namescore }}/newscore.html"></iframe>
+    {% endif %}
 
 </body>
 </html>

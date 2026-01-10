@@ -10,4 +10,4 @@ cp automne.rythme rythme.automne
 
 ruby wowmusic.rb "$2" "$3" "$4"
 cat rythme.automne
-frescobaldi c.ki
+#frescobaldi c.ki

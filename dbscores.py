@@ -47,41 +47,51 @@ def get_score_by_id(score_id):
              row[2],
              row[3],
              row[4],
-clean_and_parse_json(nettoyer_json_embedded(row[5])), 
-clean_and_parse_json(nettoyer_json_embedded(row[6])), 
+             row[5], 
+             row[6], 
              row[7],
-             row[8],
-            row[9],
-             row[10],
-             row[11]
+             row[8]
        ) 
 
     conn.close()
     return hey
+    #CREATE TABLE IF NOT EXISTS scores (
+    #    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    #    theme TEXT,
+    #    nom TEXT,
+    #    semitones TEXT,
+    #    nb_mesures INTEGER,
+    #    nb_mesures_text INTEGER,
+    #    times STRING,
+    #    textmesures INTEGER,
+    #    nbnotes INTEGER
+    #)
+
 
 def save_score(theme, nom, semitones, nbmesures, nbmesurestext, times, nbnotes, musictext, score_id=None):
     conn = get_connection()
     cursor = conn.cursor()
+
     if score_id:
         cursor.execute("""
-            UPDATE scores SET theme=?, nom=?, musique=?, lumiere=?, directions=?, motivations=?,
-            nombre_max_tours=?, duree_phase=?, pas_tours=?, repetitions=?, nbmintours=? WHERE id=?
+            UPDATE scores SET theme=?, nom=?, semitones=?, nb_mesures=?, nb_mesures_text=?, times=?,
+            textmesures=?, nbnotes=? where id=?
         """, (
-            theme, nom, musique, lumiere,
-            (directions),
-            (motivations),
-            nombre_max_tours, duree_phase, pas_tours, repetitions, nbmintours, score_id
+            theme, nom, semitones, nbmesures,
+            nbmesurestext,
+            times, musictext,
+            nbnotes, score_id
         ))
     else:
         cursor.execute("""
-            INSERT INTO scores (theme, nom, musique, lumiere, directions, motivations,
-            nombre_max_tours, duree_phase, pas_tours, repetitions, nbmintours)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            INSERT INTO scores (theme, nom, semitones, nb_mesures, nb_mesures_text, times,
+            textmesures, nbnotes)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
         """, (
-            theme, nom, musique, lumiere,
-            json.dumps(directions),
-            json.dumps(motivations),
-            nombre_max_tours, duree_phase, pas_tours, repetitions, nbmintours
+            theme, nom, semitones, nbmesures,
+            nbmesurestext,
+            times, musictext,
+            nbnotes
         ))
     conn.commit()
     conn.close()

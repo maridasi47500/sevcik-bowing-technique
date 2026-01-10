@@ -16,10 +16,10 @@ AutoEndMovementBarline = \bar "|."
 % The music follows
 
 MvmntIVoiceI = {
-c''4 d'' c'' b' c'' b' c'' a' g'4 a' g' fis' g' fis' g' e' f'4 g' f' d' e' f' e' c' d'4 g' fis' g' fis' g' a' b' c''4 d'' c'' b' c'' b' c'' a' g'4 a' g' fis' g' fis' g' e' d'4 g' fis' g' d' fis' e' fis' g'4 b' d'' c'' b' a' g' f' e'4 fis' gis' e' fis' gis' a' fis' gis'4 e'' d'' c'' b' a' gis' e' a'4 b' c'' a' b' c'' d'' b' c''4 a'' g'' f'' e'' d'' c'' a' d'4 e' fis' d' e' fis' g' e' fis'4 d'' c'' b' a' g' fis' d' g4 a b g a b c' a b4 g' fis' e' d' c' b g g'4 fis' e' dis' e' fis' g' b' c''4 b' a' gis' a' b' c'' e'' d''4 e'' d'' b' d'' c'' b' a' g'4 a' g' fis' g' gis' a' b' c''4 d'' c'' b' c'' b' c'' a' g'4 a' g' fis' g' fis' g' e' f'4 g' f' d' e' f' e' c' d'4 g' fis' g' fis' g' a' b' c''4 d'' c'' b' c'' b' c'' a' g'4 a' g' fis' g' fis' g' e' d'4 e' f' a' b' c'' d'' b' c''4 d'' c'' b' c'' e'' g'' b' c''4 d'' c'' b' c'' e' g' b c'4 e' g' b c' e' g' b c'4        1
+  CONTENTSCOREHERE
+
 }
 %Default Score Layout
-
 \header{DenemoLayoutName = "Default Score Layout"
         instrumentation = \markup { \with-url #'"scheme:(d-BookInstrumentation)" "Partition entière"}
         }
@@ -40,7 +40,7 @@ tagline = \markup {"" on \simple #(strftime "%x" (localtime (current-time)))}
 %Start of Staff
 \new Staff = "Part 1"  << 
  \new Voice = "MvmntIVoiceI"  { 
-  \clef treble    \key c \major    \time 2/4   \MvmntIVoiceI
+  \clef treble    \key c \major    \time TIMESCOREHERE   \MvmntIVoiceI
                         } %End of voice
 
                         >> %End of Staff

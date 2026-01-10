@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
+import subprocess
 from dbscores import init_db, get_all_scores, get_score_by_id, save_score
 from flask import send_file
-import json
 import json
 from dbscores import create_effet, create_type_effet  # assure-toi que ces fonctions existent
 from dbscores import get_effet_by_id, get_etapes_effet
@@ -43,16 +43,15 @@ def charger_scores_depuis_db():
             "id": row[0],
             "theme": row[1],
             "nom": row[2],
-            "musique": row[3],
-            "lumiere": row[4],
-            "directions": nettoyer_json_embedded(row[5]),
-            "motivations": nettoyer_json_embedded(row[6]),
-            "nombre_max_tours": row[7],
-            "duree_phase": row[8],
-            "pas_tours": row[9],
-            "repetitions": row[10],
-            "nbmintours": row[11]
+            "semitones": row[3],
+            "mesures": row[4],
+            "mesurestext": row[5],
+            "times": row[6],
+            "musictext": row[7],
+            "nbnotes": row[8]
+
         }
+
     return scores
 
 menu_scores = charger_scores_depuis_db()
@@ -66,12 +65,11 @@ def index():
         randomlist = request.form.get('randomlist')
         theme = request.form.get('theme')
         if theme in scores:
-            generer_score_yaml(theme, randomlist=randomlist)
             message = f"Séance '{scores[theme]['nom']}' lancée avec succès !"
         else:
             message = "Thème invalide."
 
-        return render_template('index.html', scores=scores, menu=scores, message=message)
+        return render_template('index.html', namescore=scores[theme]['theme'], scores=scores, menu=scores, message=message)
     return render_template('index.html', scores=scores, menu=scores)
 
 
@@ -90,13 +88,33 @@ def new():
 @app.route("/save", methods=["POST"])
 def save():
     score_id = request.form.get("id")
+
+    file_pointer = open("./scores/"+request.form["theme"]+"_1.ly")
+    contents = file_pointer.read()
+    file_pointer = open("./scores/currentscore.html", "w")
+    file_pointer.write("<h1>"+request.form["theme"]+" score</h1>"+"<lilypond staffsize=34>"+contents+"</lilypond>")
+    file_pointer.close()
+    subprocess.run(["lilypond-book", "scores/currentscore.html", "-f", "html", "--output", "scores/current"+request.form["theme"]]) 
+    file_pointer = open("./scoreexample.ly")
+    contents = file_pointer.read()
+    contents=contents.replace("TIMESCOREHERE", request.form["times"]).replace("CONTENTSCOREHERE", request.form["musictext"])
+    file_pointer = open("./scores/"+request.form["theme"]+"_2.ly", "w")
+    file_pointer.write(contents)
+    file_pointer.close()
+    subprocess.run(["sh", "./texterythme.sh", request.form["theme"], request.form["semitones"], request.form["mesures"], request.form["mesurestext"]]) 
+    file_pointer = open("./c.ki")
+    contents = file_pointer.read()
+    file_pointer = open("./scores/newscore.html", "w")
+    file_pointer.write("<h1>"+request.form["nom"]+"</h1>"+"<lilypond staffsize=34>"+contents+"</lilypond>")
+    file_pointer.close()
+    subprocess.run(["lilypond-book", "scores/newscore.html", "-f", "html", "--output", "scores/mynewscore"+request.form["theme"]]) 
     save_score(
         request.form["theme"],
         request.form["nom"],
         int(request.form["semitones"]),
         int(request.form["mesures"]),
         int(request.form["mesurestext"]),
-        int(request.form["times"]),
+        request.form["times"],
         int(request.form["nbnotes"]),
         request.form["musictext"],
         score_id=score_id
@@ -107,5 +125,5 @@ def save():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=4000, debug=True)
 

@@ -72,6 +72,8 @@ lower  = \relative { b,2 e }
 
 # autumn-leaves-lilypond
 # sevcik-bowing-technique
+ ![alt text](bowing1.png) 
+ ![alt text](bowing2.png) 
  ![alt text](violin1.png) 
  ![alt text](violin3.png) 
  ![alt text](violin2.png) 
