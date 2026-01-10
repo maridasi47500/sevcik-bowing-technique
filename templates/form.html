@@ -5,7 +5,7 @@
 <h1>{{ 'Modifier' if score else 'Ajouter' }} une séance</h1>
 <form method="post" action="{{ url_for('save') }}">
   {% if score %}<input type="hidden" name="id" value="{{ score[0] }}">{% endif %}
-  <label>Thème (nom de la partition): <input name="theme" value="{{ score[1] if score else '' }}"></label><br>
+  <label>Thème (nom de la partition :cree une partition avec frescobaldi, et appelle la avec un nom comme scores/myscore_1.ly ,  et copie ici seulement le nom comme "myscore" ): <input name="theme" value="{{ score[1] if score else '' }}"></label><br>
   <label>Nom (nom du nouveau texte): <input name="nom" value="{{ score[2] if score else '' }}"></label><br>
   <label>demi ton de la partition: <input name="semitones" value="{{ score[3] if score else '' }}"></label><br>
   <label>nom de mesures ecrites dans un petit texte qui sont les memes note que les mesures du grand text: <input name="mesures" value="{{ score[4] if score else '' }}"></label><br>

@@ -82,3 +82,10 @@ lower  = \relative { b,2 e }
  ![alt text](photo1.png) 
  ![alt text](photo2.png) 
  ![alt text](photo3.png) 
+
+````
+python3 app.py
+python3 -m http.server
+mkdir scores
+cp [yourscore]_1.ly scores
+````
