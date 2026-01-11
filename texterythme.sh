@@ -1,13 +1,13 @@
 
-ruby numberrythme.rb "$1" "$3" "$4"
-ruby wownote.rb "$1"
-ruby deletelines.rb "$1"
-cp "second$1_2.ly" automne.rythme
+ruby numberrythme.rb "scores/$1" "$3" "$4"
+ruby wownote.rb "scores/$1"
+ruby deletelines.rb "scores/$1"
+cp "scores/second$1_2.ly" automne.rythme
 ruby wowrythme.rb
-ruby wownoterythme.rb "$1"
+ruby wownoterythme.rb "scores/$1"
 cp automne.rythme rythme.automne
 
 
 ruby wowmusic.rb "$2" "$3" "$4"
 cat rythme.automne
-#frescobaldi c.ki
+frescobaldi c.ki

@@ -94,7 +94,7 @@ if section_match
   updated_content = input.sub(/(MvmntIVoiceI\s*=\s*{)([^}]*)}/m, new_section)
 
   # Réécriture du fichier
-  File.write("second"+filename, updated_content)
+  File.write("scores/second"+filename.split("/")[1], updated_content)
 
   puts "✅ Section 'MvmntIVoiceI' modifiée avec succès dans '#{filename}'"
 else
